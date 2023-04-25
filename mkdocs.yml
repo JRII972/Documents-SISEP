@@ -1,6 +1,6 @@
 site_name: Documentation du servive - SISEP
 # site_name: SISEP DOC
-
+repo_url: https://github.com/JRII972/Documents-SISEP
 theme:
   name: material
   locale: fr
@@ -8,13 +8,36 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate 
+    - header.autohide
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections 
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
 
 plugins:
+  # - meta
   - table-reader
   - search:
       lang: fr
       # prebuild_index: true
-      indexing: 'full'
+      # indexing: 'full'
+  - tags:
+      tags_file: tags.md
+  - mkdocs-jupyter
+  - categories:
+      generate_index: true
+      verbose: false
+      base_name: 'categorie'
+      section_title: 'Catégories'
+      no_nav: false
+      # category_separator: '|' # TODO: search good settings
 
 markdown_extensions:
   - admonition
