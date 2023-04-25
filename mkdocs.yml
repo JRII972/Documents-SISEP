@@ -1,0 +1,53 @@
+site_name: Documentation du servive - SISEP
+# site_name: SISEP DOC
+
+theme:
+  name: material
+  locale: fr
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate 
+
+plugins:
+  - table-reader
+  - search:
+      lang: fr
+      # prebuild_index: true
+      indexing: 'full'
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - md_in_html
+  - footnotes
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+
+extra_javascript:
+  - js/mathjax.js
+  - js/polyfill.min.js?features=es6
+  - js/tex-mml-chtml.js
